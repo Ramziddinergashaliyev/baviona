@@ -1,0 +1,407 @@
+// .directions {
+//   padding: 24px 0 48px;
+
+//   &__container {
+//     width: 100%;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 0 24px;
+//   }
+
+//   &__title {
+//     position: relative;
+//     font-size: 22px;
+//     font-weight: 600;
+//     color: #0b2240;
+//     padding-bottom: 10px;
+//     margin-bottom: 10px;
+
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       width: 38px;
+//       height: 2px;
+//       background: #d4a24c;
+//     }
+//   }
+
+//   &__sub { font-size: 14px; color: #5d6b7e; margin-bottom: 20px; }
+//   &__sub-accent { color: #d4a24c; }
+
+//   &__grid {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 12px;
+//   }
+
+//   &__card {
+//     background: #f5f7fa;
+//     border-radius: 8px;
+//     overflow: hidden;
+//     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+//   }
+
+//   &__img { width: 100%; height: 150px; object-fit: cover; }
+
+//   &__body {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-end;
+//     gap: 10px;
+//     padding: 12px;
+//   }
+
+//   &__card-title { font-size: 12.5px; font-weight: 600; color: #0b2240; margin-bottom: 4px; }
+//   &__card-text { font-size: 11px; color: #5d6b7e; line-height: 1.45; }
+
+//   &__arrow {
+//     flex-shrink: 0;
+//     width: 34px;
+//     height: 34px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 50%;
+//     border: 1.5px solid #d4a24c;
+//     color: #d4a24c;
+//     font-size: 16px;
+//     transition: 0.2s;
+
+//     &:hover { background: #d4a24c; color: #fff; }
+//   }
+
+//   @media (max-width: 991px) {
+//     &__grid { grid-template-columns: repeat(2, 1fr); }
+//   }
+
+//   @media (max-width: 575px) {
+//     &__grid { grid-template-columns: 1fr; }
+//   }
+// }
+
+
+$gold: #d4a24c;
+$gold-dark: #b8872f;
+$navy: #0b2240;
+$text: #5d6b7e;
+
+.directions {
+  position: relative;
+  padding: 90px 0 110px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f5f8fc 0%, #fff 100%);
+
+  &__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    animation: dirBlob 14s ease-in-out infinite alternate;
+
+    &--1 {
+      top: 40px;
+      right: -120px;
+      width: 360px;
+      height: 360px;
+      background: rgba($gold, 0.16);
+    }
+
+    &--2 {
+      bottom: -120px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: rgba(#2f6fb5, 0.12);
+      animation-delay: -7s;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    padding: 0px;
+  }
+
+  &__head {
+    max-width: 720px;
+    margin: 0 auto 56px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  &__tag {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background: rgba($gold, 0.14);
+    border: 1px solid rgba($gold, 0.35);
+    color: $gold-dark;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(34px, 3.4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: $navy;
+    padding-bottom: 20px;
+    margin-bottom: 18px;
+
+    span {
+      background: linear-gradient(90deg, $gold, $gold-dark);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 4px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, $gold, $gold-dark);
+      transform: translateX(-50%);
+      transition: width 0.9s 0.5s ease;
+    }
+  }
+
+  &__sub {
+    font-size: 19px;
+    line-height: 1.6;
+    color: $text;
+  }
+
+  &__sub-accent {
+    color: $gold-dark;
+    font-weight: 600;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid rgba($navy, 0.06);
+    box-shadow: 0 10px 34px rgba($navy, 0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(70px) scale(0.96);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.35s;
+    transition-delay: calc(var(--i) * 0.14s + 0.3s), calc(var(--i) * 0.14s + 0.3s), 0s;
+
+    &:hover {
+      box-shadow: 0 26px 60px rgba($navy, 0.2);
+
+      .directions__img {
+        transform: scale(1.12) rotate(1deg);
+      }
+
+      .directions__media::after {
+        opacity: 1;
+      }
+
+      .directions__card-title {
+        color: $gold-dark;
+      }
+
+      .directions__line {
+        transform: scaleX(1);
+      }
+
+      .directions__arrow {
+        background: linear-gradient(135deg, $gold, $gold-dark);
+        border-color: transparent;
+        color: #fff;
+        transform: rotate(-45deg);
+        box-shadow: 0 8px 20px rgba($gold, 0.45);
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba($navy, 0.7) 100%);
+      opacity: 0.5;
+      transition: opacity 0.35s;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  &__num {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    padding: 7px 14px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 24px 24px 28px;
+  }
+
+  &__card-title {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $navy;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+  }
+
+  &__card-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $text;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid $gold;
+    color: $gold;
+    font-size: 22px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s, color 0.3s, box-shadow 0.3s;
+  }
+
+  // kartaning pastidagi oltin chiziq, hover'da chapdan o'ngga to'ladi
+  &__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: linear-gradient(90deg, $gold, $gold-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* ===== Ekranga kirganda ===== */
+  &--visible {
+    .directions__head {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .directions__title::after {
+      width: 90px;
+    }
+
+    .directions__card {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1200px) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 64px 0 80px;
+
+    &__container {
+      padding: 0 20px;
+    }
+
+    &__head {
+      margin-bottom: 40px;
+    }
+
+    &__sub {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__media {
+      height: 210px;
+    }
+  }
+}
+
+@keyframes dirBlob {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-40px, 30px) scale(1.15);
+  }
+}
+
+// animatsiyani xohlamaydigan foydalanuvchilar uchun
+@media (prefers-reduced-motion: reduce) {
+  .directions__blob {
+    animation: none;
+  }
+
+  .directions__head,
+  .directions__card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

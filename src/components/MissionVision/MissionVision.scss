@@ -1,0 +1,284 @@
+// .mv {
+//   padding: 30px 0;
+
+//   &__container {
+//     width: 100%;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 0 24px;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//   }
+
+//   &__item {
+//     display: flex;
+//     align-items: flex-start;
+//     gap: 16px;
+//     padding: 0 32px;
+
+//     & + & { border-left: 1px solid #dfe4ea; }
+//   }
+
+//   &__icon { display: flex; flex-shrink: 0; font-size: 40px; color: #d4a24c; }
+//   &__title { font-size: 16px; font-weight: 600; color: #0b2240; margin-bottom: 6px; }
+//   &__text { font-size: 12px; color: #5d6b7e; line-height: 1.6; }
+
+//   @media (max-width: 767px) {
+//     &__container { grid-template-columns: 1fr; gap: 24px; }
+//     &__item { padding: 0; }
+//     &__item + &__item { border-left: none; }
+//   }
+// }
+
+
+$gold: #d4a24c;
+$gold-dark: #b8872f;
+$navy: #0b2240;
+$text: #5d6b7e;
+
+.mv {
+  position: relative;
+  padding: 40px 0 40px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f5f8fc 0%, #fff 100%);
+
+  &__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    animation: mvBlob 14s ease-in-out infinite alternate;
+
+    &--1 {
+      top: -60px;
+      right: -100px;
+      width: 340px;
+      height: 340px;
+      background: rgba($gold, 0.16);
+    }
+
+    &--2 {
+      bottom: -100px;
+      left: -120px;
+      width: 400px;
+      height: 400px;
+      background: rgba(#2f6fb5, 0.12);
+      animation-delay: -7s;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* ===== Karta ===== */
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 52px 48px;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid rgba($navy, 0.06);
+    box-shadow: 0 10px 34px rgba($navy, 0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.35s;
+    transition-delay: calc(var(--i) * 0.2s + 0.1s), calc(var(--i) * 0.2s + 0.1s), 0s;
+
+    &:hover {
+      box-shadow: 0 28px 64px rgba($navy, 0.2);
+
+      .mv__line {
+        transform: scaleX(1);
+      }
+
+      .mv__bg-text {
+        transform: translateX(-10px) scale(1.05);
+      }
+
+      .mv__icon {
+        background: linear-gradient(135deg, $gold, $gold-dark);
+        border-color: transparent;
+        color: #fff;
+        transform: translateY(-6px) rotate(-6deg);
+        box-shadow: 0 16px 34px rgba($gold, 0.5);
+      }
+    }
+
+    // to'q (Vision) variant
+    &--dark {
+      background: linear-gradient(135deg, #07162b 0%, $navy 55%, #12345e 100%);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 44px rgba($navy, 0.35);
+
+      .mv__title {
+        color: #fff;
+      }
+
+      .mv__text {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .mv__bg-text {
+        color: rgba(255, 255, 255, 0.05);
+      }
+
+      .mv__icon {
+        background: rgba($gold, 0.16);
+        border-color: rgba($gold, 0.45);
+      }
+    }
+  }
+
+  // orqadagi katta yozuv
+  &__bg-text {
+    position: absolute;
+    right: 24px;
+    bottom: -14px;
+    font-size: 120px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: rgba($navy, 0.045);
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    border-radius: 28px;
+    font-size: 44px;
+    color: $gold;
+    background: rgba($gold, 0.12);
+    border: 1px solid rgba($gold, 0.35);
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s, color 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    position: relative;
+    font-size: clamp(26px, 2.4vw, 36px);
+    font-weight: 700;
+    color: $navy;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 4px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, $gold, $gold-dark);
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: $text;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: linear-gradient(90deg, $gold, $gold-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* ===== Ekranga kirganda ===== */
+  &--visible {
+    .mv__item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1100px) {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 64px 0 80px;
+
+    &__container {
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    &__item {
+      flex-direction: column;
+      gap: 22px;
+      padding: 36px 26px;
+    }
+
+    &__icon {
+      width: 80px;
+      height: 80px;
+      font-size: 36px;
+      border-radius: 22px;
+    }
+
+    &__text {
+      font-size: 17px;
+    }
+
+    &__bg-text {
+      font-size: 80px;
+    }
+  }
+}
+
+@keyframes mvBlob {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-40px, 30px) scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mv__blob {
+    animation: none;
+  }
+
+  .mv__item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
