@@ -1,6 +1,5 @@
 import { FiArrowRight, FiMail } from 'react-icons/fi';
-import img from '../../assets/hero.jpg';
-import vd from '../../assets/video/bg-vd1.mp4';
+import vd from '../../assets/video/bg-vd.mp4';
 import './Hero.scss';
 
 const Hero = () => (

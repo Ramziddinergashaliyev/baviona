@@ -1,52 +1,9 @@
-// import { FiArrowRight } from 'react-icons/fi';
-// import img1 from "../../assets/our1.jpg"
-// import img2 from "../../assets/our2.jpg"
-// import img3 from "../../assets/our3.jpg"
-// import img4 from "../../assets/our4.jpg"
-// import './CoreDirections.scss';
-
-// const items = [
-//   { img: img1, title: 'Biological Products', text: 'Ingredients, extracts, and bio-based solutions for a healthier tomorrow.', href: '/services/biological' },
-//   { img: img2, title: 'Food & Agricultural Products', text: 'Quality food and agricultural commodities from trusted sources.', href: '/services/food' },
-//   { img: img3, title: 'Raw Materials & Commodities', text: 'Essential materials for industry and global supply chains.', href: '/services/raw-materials' },
-//   { img: img4, title: 'General Trading & Global Supply', text: 'Flexible trading solutions across a wide range of products.', href: '/services/trading' },
-// ];
-
-// const CoreDirections = () => (
-//   <section className="directions">
-//     <div className="directions__container">
-//       <h2 className="directions__title">Our Core Directions</h2>
-//       <p className="directions__sub">
-//         <span className="directions__sub-accent">Diverse lines</span> of products. Global reach. Real opportunities.
-//       </p>
-
-//       <div className="directions__grid">
-//         {items.map((i) => (
-//           <article key={i.title} className="directions__card">
-//             <img className="directions__img" src={i.img} alt={i.title} />
-//             <div className="directions__body">
-//               <div>
-//                 <h4 className="directions__card-title">{i.title}</h4>
-//                 <p className="directions__card-text">{i.text}</p>
-//               </div>
-//               <a href={i.href} className="directions__arrow" aria-label={i.title}><FiArrowRight /></a>
-//             </div>
-//           </article>
-//         ))}
-//       </div>
-//     </div>
-//   </section>
-// );
-
-// export default CoreDirections;
-
-
 import { useEffect, useRef, useState } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
-import img1 from '../../assets/our1.jpg';
-import img2 from '../../assets/our2.jpg';
-import img3 from '../../assets/our3.jpg';
-import img4 from '../../assets/our4.jpg';
+import img1 from '../../assets/our1.webp';
+import img2 from '../../assets/our2.webp';
+import img3 from '../../assets/our3.webp';
+import img4 from '../../assets/our4.webp';
 import './CoreDirections.scss';
 
 const items = [
@@ -56,7 +13,6 @@ const items = [
   { img: img4, title: 'General Trading & Global Supply', text: 'Flexible trading solutions across a wide range of products.', href: '/services/trading' },
 ];
 
-// element ekranga kirganda true qaytaradi
 const useInView = (threshold = 0.15) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);

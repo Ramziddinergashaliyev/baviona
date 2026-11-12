@@ -1,79 +1,3 @@
-// .who {
-//   padding: 48px 0;
-
-//   &__container {
-//     width: 100%;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 0 24px;
-//     display: grid;
-//     grid-template-columns: 1.2fr repeat(3, 1fr);
-//     gap: 22px;
-//     align-items: start;
-//   }
-
-//   &__title {
-//     position: relative;
-//     font-size: 22px;
-//     font-weight: 600;
-//     color: #0b2240;
-//     padding-bottom: 10px;
-//     margin-bottom: 14px;
-
-//     &::after {
-//       content: '';
-//       position: absolute;
-//       left: 0;
-//       bottom: 0;
-//       width: 38px;
-//       height: 2px;
-//       background: #d4a24c;
-//     }
-//   }
-
-//   &__text {
-//     font-size: 12.5px;
-//     color: #5d6b7e;
-//     line-height: 1.7;
-//     margin-bottom: 20px;
-//   }
-
-//   &__btn {
-//     display: inline-flex;
-//     padding: 11px 24px;
-//     border-radius: 4px;
-//     background: #d4a24c;
-//     color: #fff;
-//     font-size: 14px;
-//     font-weight: 500;
-//     transition: background 0.2s;
-
-//     &:hover { background: #b8872f; }
-//   }
-
-//   &__card-img {
-//     width: 100%;
-//     height: 150px;
-//     object-fit: cover;
-//     border-radius: 8px;
-//     margin-bottom: 12px;
-//   }
-
-//   &__card-title { font-size: 14px; font-weight: 600; color: #0b2240; margin-bottom: 4px; }
-//   &__card-text { font-size: 12px; color: #5d6b7e; line-height: 1.5; }
-
-//   @media (max-width: 991px) {
-//     &__container { grid-template-columns: repeat(3, 1fr); }
-//     &__info { grid-column: 1 / -1; }
-//   }
-
-//   @media (max-width: 640px) {
-//     &__container { grid-template-columns: 1fr; }
-//   }
-// }
-
-
-
 $gold: #d4a24c;
 $gold-dark: #b8872f;
 $navy: #0b2240;
@@ -85,7 +9,6 @@ $text: #5d6b7e;
   overflow: hidden;
   background: linear-gradient(180deg, #fff 0%, #f5f8fc 100%);
 
-  // orqadagi yumshoq dog'lar
   &__blob {
     position: absolute;
     border-radius: 50%;
@@ -210,7 +133,6 @@ $text: #5d6b7e;
     }
   }
 
-  /* ===== Kartalar ===== */
   &__card {
     display: flex;
     flex-direction: column;
@@ -254,7 +176,6 @@ $text: #5d6b7e;
     height: 240px;
     overflow: hidden;
 
-    // hover'da pastdan navy gradient
     &::after {
       content: '';
       position: absolute;
@@ -326,7 +247,6 @@ $text: #5d6b7e;
     color: $text;
   }
 
-  /* ===== Ekranga kirganda ===== */
   &--visible {
     .who__info {
       opacity: 1;
@@ -343,7 +263,6 @@ $text: #5d6b7e;
     }
   }
 
-  /* ===== Responsive ===== */
   @media (max-width: 1200px) {
     &__container {
       grid-template-columns: repeat(3, 1fr);

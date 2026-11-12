@@ -1,36 +1,3 @@
-// .mv {
-//   padding: 30px 0;
-
-//   &__container {
-//     width: 100%;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 0 24px;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//   }
-
-//   &__item {
-//     display: flex;
-//     align-items: flex-start;
-//     gap: 16px;
-//     padding: 0 32px;
-
-//     & + & { border-left: 1px solid #dfe4ea; }
-//   }
-
-//   &__icon { display: flex; flex-shrink: 0; font-size: 40px; color: #d4a24c; }
-//   &__title { font-size: 16px; font-weight: 600; color: #0b2240; margin-bottom: 6px; }
-//   &__text { font-size: 12px; color: #5d6b7e; line-height: 1.6; }
-
-//   @media (max-width: 767px) {
-//     &__container { grid-template-columns: 1fr; gap: 24px; }
-//     &__item { padding: 0; }
-//     &__item + &__item { border-left: none; }
-//   }
-// }
-
-
 $gold: #d4a24c;
 $gold-dark: #b8872f;
 $navy: #0b2240;
@@ -76,7 +43,6 @@ $text: #5d6b7e;
     gap: 32px;
   }
 
-  /* ===== Karta ===== */
   &__item {
     position: relative;
     display: flex;
@@ -116,7 +82,6 @@ $text: #5d6b7e;
       }
     }
 
-    // to'q (Vision) variant
     &--dark {
       background: linear-gradient(135deg, #07162b 0%, $navy 55%, #12345e 100%);
       border-color: rgba(255, 255, 255, 0.12);
@@ -141,7 +106,6 @@ $text: #5d6b7e;
     }
   }
 
-  // orqadagi katta yozuv
   &__bg-text {
     position: absolute;
     right: 24px;
@@ -215,7 +179,6 @@ $text: #5d6b7e;
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  /* ===== Ekranga kirganda ===== */
   &--visible {
     .mv__item {
       opacity: 1;
@@ -223,7 +186,6 @@ $text: #5d6b7e;
     }
   }
 
-  /* ===== Responsive ===== */
   @media (max-width: 1100px) {
     &__container {
       grid-template-columns: 1fr;

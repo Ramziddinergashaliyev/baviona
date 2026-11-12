@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import bg from '../../assets/stats-bg.jpg';
+import bg from '../../assets/stats-bg.webp';
 import './Stats.scss';
 
 const stats = [
@@ -31,7 +31,6 @@ const useInView = (threshold = 0.3) => {
   return [ref, visible];
 };
 
-// 0 dan target gacha sanaydi
 const CountUp = ({ to, suffix, start, duration = 1800 }) => {
   const [n, setN] = useState(0);
 

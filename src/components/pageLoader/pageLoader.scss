@@ -1,0 +1,99 @@
+$ink: #10263a;
+$leaf: #4f9a52;
+$leaf-light: #9bd49a;
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background: $ink;
+    color: #fff;
+
+    // Tez yuklanganda "yalt" etib ko'rinmasligi uchun biroz kechikib chiqadi
+    opacity: 0;
+    animation: page-loader-in 0.3s ease 0.15s forwards;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__globe {
+        width: 96px;
+        height: 96px;
+        color: rgba(255, 255, 255, 0.35);
+    }
+
+    &__orbit {
+        stroke: $leaf-light;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 40 250;
+        transform-origin: 50% 50%;
+        animation: page-loader-spin 1.4s linear infinite;
+    }
+
+    &__brand {
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: 0.18em;
+    }
+
+    &__bar {
+        width: 140px;
+        height: 2px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.15);
+
+        span {
+            display: block;
+            width: 40%;
+            height: 100%;
+            background: $leaf;
+            animation: page-loader-bar 1.2s ease-in-out infinite;
+        }
+    }
+
+    &__sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+}
+
+@keyframes page-loader-in {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes page-loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes page-loader-bar {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(350%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page-loader__orbit,
+    .page-loader__bar span {
+        animation: none;
+    }
+}

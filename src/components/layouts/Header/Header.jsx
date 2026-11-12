@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import logo from '../../../assets/bavi.png';
-import logoW from '../../../assets/white.png';
+import logoW from '../../../assets/white.webp';
 import './Header.scss';
 
 const links = [

@@ -19,7 +19,6 @@ const items = [
   },
 ];
 
-// element ekranga kirganda true qaytaradi
 const useInView = (threshold = 0.2) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);

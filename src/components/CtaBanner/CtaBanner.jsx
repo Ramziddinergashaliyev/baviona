@@ -1,26 +1,3 @@
-// import { FiArrowRight } from 'react-icons/fi';
-// import './CtaBanner.scss';
-
-// const CtaBanner = () => (
-//   <section className="cta">
-//     <img className="cta__bg" src="/images/cta-bg.jpg" alt="" />
-//     <div className="cta__overlay" />
-
-//     <div className="cta__container">
-//       <div>
-//         <h3 className="cta__title">Become Our Trade Partner</h3>
-//         <p className="cta__text">Let's create new opportunities together.</p>
-//       </div>
-//       <a href="/contact" className="cta__btn">
-//         Get a Quote <FiArrowRight />
-//       </a>
-//     </div>
-//   </section>
-// );
-
-// export default CtaBanner;
-
-
 import { useEffect, useRef, useState } from 'react';
 import { FiArrowRight, FiPhone } from 'react-icons/fi';
 import './CtaBanner.scss';

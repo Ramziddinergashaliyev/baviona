@@ -37,9 +37,7 @@ const About = ({ lang: initialLang = 'ru' }) => {
     return (
         <main className="about" lang={lang}>
             <section className="about__hero">
-                <Globe />
-
-                <div className="container about__hero-inner">
+                <div className="container about__hero-inner container">
                     <div className="about__lang" role="group" aria-label="Language">
 
                     </div>
@@ -48,11 +46,6 @@ const About = ({ lang: initialLang = 'ru' }) => {
                     <p className="about__group">{t.group}</p>
                     <h1 className="about__hero-title">{t.heroTitle}</h1>
                     <p className="about__tagline">{t.tagline}</p>
-
-                    <div className="about__stat">
-                        <span className="about__stat-value">{t.stat.value}</span>
-                        <span className="about__stat-label">{t.stat.label}</span>
-                    </div>
                 </div>
             </section>
 
@@ -87,7 +80,6 @@ const About = ({ lang: initialLang = 'ru' }) => {
                 </div>
             </section>
 
-            {/* GLOBAL TRADE */}
             <section className="about__section about__trade">
                 <div className="container about__trade-grid">
                     <div>
@@ -109,7 +101,6 @@ const About = ({ lang: initialLang = 'ru' }) => {
                 </div>
             </section>
 
-            {/* SECTORS */}
             <section className="about__section about__sectors">
                 <div className="container">
                     <h2 className="about__title">{t.sectorsTitle}</h2>
@@ -125,7 +116,6 @@ const About = ({ lang: initialLang = 'ru' }) => {
                 </div>
             </section>
 
-            {/* VALUES */}
             <section className="about__section about__values">
                 <div className="container">
                     <h2 className="about__title">{t.valuesTitle}</h2>
@@ -144,7 +134,6 @@ const About = ({ lang: initialLang = 'ru' }) => {
                 </div>
             </section>
 
-            {/* MISSION & VISION */}
             <section className="about__mv">
                 <div className="container about__mv-grid">
                     <article className="about__mv-block">

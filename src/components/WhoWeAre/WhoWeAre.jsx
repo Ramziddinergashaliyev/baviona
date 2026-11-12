@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
-import img1 from '../../assets/who1.jpg';
-import img2 from '../../assets/who2.jpg';
-import img3 from '../../assets/who3.jpg';
+import img1 from '../../assets/who1.webp';
+import img2 from '../../assets/who2.webp';
+import img3 from '../../assets/who3.webp';
 import './WhoWeAre.scss';
 
 const cards = [
@@ -11,7 +11,6 @@ const cards = [
   { img: img3, title: 'Reliable Logistics', text: 'Efficient shipping and delivery to keep your business moving.' },
 ];
 
-// element ekranga kirganda true qaytaradi
 const useInView = (threshold = 0.2) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);

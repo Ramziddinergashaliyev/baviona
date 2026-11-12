@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { FiLinkedin, FiYoutube, FiMail, FiArrowUp, FiArrowUpRight } from 'react-icons/fi';
-import logo from '../../../assets/white.png';
+import logo from '../../../assets/white.webp';
 import './Footer.scss';
 
 const links = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Our Services', href: '/services' },
-  { label: 'Sourcing Solutions', href: '/sourcing' },
   { label: 'Resources', href: '/resources' },
   { label: 'Contact Us', href: '/contact' },
 ];
