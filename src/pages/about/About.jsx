@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CONTENT, LANGS } from '../../static/index';
-import './About.scss';
+import './about.scss';
 
 const Globe = () => (
     <svg
