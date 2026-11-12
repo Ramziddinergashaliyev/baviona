@@ -1,37 +1,3 @@
-// import { FiTarget, FiEye } from 'react-icons/fi';
-// import './MissionVision.scss';
-
-// const MissionVision = () => (
-//   <section className="mv">
-//     <div className="mv__container">
-//       <div className="mv__item">
-//         <span className="mv__icon"><FiTarget /></span>
-//         <div>
-//           <h3 className="mv__title">Our Mission</h3>
-//           <p className="mv__text">
-//             To bridge global markets by providing reliable sourcing, quality products, and seamless trade solutions
-//             that create sustainable growth for our partners.
-//           </p>
-//         </div>
-//       </div>
-
-//       <div className="mv__item">
-//         <span className="mv__icon"><FiEye /></span>
-//         <div>
-//           <h3 className="mv__title">Our Vision</h3>
-//           <p className="mv__text">
-//             To be a trusted global trade partner, recognized for connecting businesses, empowering communities, and
-//             building a more prosperous world.
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   </section>
-// );
-
-// export default MissionVision;
-
-
 import { useEffect, useRef, useState } from 'react';
 import { FiTarget, FiEye } from 'react-icons/fi';
 import './MissionVision.scss';

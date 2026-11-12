@@ -1,30 +1,3 @@
-// import './Stats.scss';
-
-// const stats = [
-//   { value: '10+', label: 'Years of Experience' },
-//   { value: '6', label: 'Continents' },
-//   { value: '50+', label: 'Countries Served' },
-// ];
-
-// const Stats = () => (
-//   <section className="stats">
-//     <img className="stats__bg" src="/images/stats-bg.jpg" alt="" />
-//     <div className="stats__overlay" />
-
-//     <div className="stats__container">
-//       {stats.map((s) => (
-//         <div key={s.label} className="stats__item">
-//           <strong className="stats__value">{s.value}</strong>
-//           <span className="stats__label">{s.label}</span>
-//         </div>
-//       ))}
-//     </div>
-//   </section>
-// );
-
-// export default Stats;
-
-
 import { useEffect, useRef, useState } from 'react';
 import bg from '../../assets/stats-bg.jpg';
 import './Stats.scss';
