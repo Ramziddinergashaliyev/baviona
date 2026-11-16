@@ -21,6 +21,7 @@ $container: 1160px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    margin-top: 85px;
 
 
     &__container {
@@ -60,9 +61,9 @@ $container: 1160px;
     position: relative;
     display: flex;
     align-items: center;
-    height: 640px;
+    height: 680px;
     background-color: $ink;
-    background-image: url(../../assets/hero.webp);
+    background-image: url(../../assets/about.webp);
     background-repeat: no-repeat;
     background-position: center right;
     background-size: cover;
