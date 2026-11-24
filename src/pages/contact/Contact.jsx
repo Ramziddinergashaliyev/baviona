@@ -3,8 +3,8 @@ import './contact.scss';
 
 const CONTACT = {
     email: 'info@baviona.com',
-    phone: '+000 00 000 00 00',
-    address: 'Your office address',
+    phone: '+998 97 712 03 39',
+    address: '2 Zanjirbog Street, Yakkasaray District, Tashkent 100031, Republic of Uzbekistan',
 };
 
 const FORM_ENDPOINT = '';
