@@ -797,7 +797,6 @@ $container: 1160px;
 
 .about__highlight {
     margin-top: 40px;
-    padding-left: 24px;
     font-size: 1.125rem;
     line-height: 1.6;
     color: $ink;
@@ -988,10 +987,6 @@ $container: 1160px;
 }
 
 /* ================= SEO / TEAM ================= */
-/* ================= SEO / TEAM ================= */
-/* ================= SEO / TEAM ================= */
-
-/* ================= SEO / TEAM ================= */
 
 .about__seo {
     background: $chalk;
@@ -1020,7 +1015,6 @@ $container: 1160px;
     }
 }
 
-// paydo bo'lish animatsiyasi
 .about__seo-member {
     display: flex;
     flex-direction: column;
@@ -1081,7 +1075,6 @@ $container: 1160px;
     }
 }
 
-// yumshoq yashil nur
 .about__seo-glow {
     position: absolute;
     inset: -18px;
@@ -1106,7 +1099,6 @@ $container: 1160px;
     color: $muted;
 }
 
-// email va telefon: oddiy matn
 .about__seo-contacts {
     display: flex;
     flex-direction: column;
@@ -1174,7 +1166,6 @@ $container: 1160px;
     }
 }
 
-// email va telefon
 .about__seo-contacts {
     display: flex;
     flex-direction: column;
@@ -1292,8 +1283,6 @@ $container: 1160px;
         width: 56px;
     }
 }
-
-/* ================= CLOSING ================= */
 
 .about__closing {
     background: $ink;
