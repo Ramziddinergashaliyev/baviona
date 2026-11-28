@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { CONTENT } from '../../static/index';
 import img1 from "../../assets/seo1.jfif";
-import img2 from "../../assets/seo2.PNG";
+import img2 from "../../assets/seo2.png";
+import img3 from "../../assets/seo3.png";
 import './about.scss';
 
 const TEAM = [
@@ -19,6 +20,13 @@ const TEAM = [
         email: 'motajonov@baviona.com',
         phone: '+998 97 712 03 39',
     },
+    {
+        img: img3,
+        name: 'Ibragimov Ibragim',
+        role: 'Менеджер по взаимодействию с азиатскими странами',
+        email: 'ibragimov@baviona.com',
+        phone: '+7 707 158 0601',
+    }
 ];
 
 const MailIcon = () => (
@@ -186,7 +194,7 @@ const About = ({ lang: initialLang = 'ru' }) => {
 
             <section className="about__section about__seo">
                 <div className="container">
-                    <h2 className="about__title about__seo-title">Руководство</h2>
+                    <h2 className="about__title about__seo-title">Управление</h2>
 
                     <div className="about__seo-grid" ref={teamRef}>
                         {TEAM.map((member, i) => (
